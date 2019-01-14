@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2019_01_09_200736) do
   create_table "courts", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.float "lng"
+    t.float "lat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
