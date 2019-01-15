@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_01_09_200736) do
     t.integer "player_id"
     t.integer "court_id"
     t.boolean "is_active"
-    t.boolean "is_favorite"
+    t.boolean "is_favorite", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

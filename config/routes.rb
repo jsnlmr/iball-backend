@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :players, only: [:index]
-      resources :courts, only: [:index]
+      resources :courts, only: [:index, :show]
+      resources :player_courts, only: [:create]
     end
   end
 end

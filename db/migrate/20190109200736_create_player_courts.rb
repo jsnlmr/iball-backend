@@ -4,7 +4,7 @@ class CreatePlayerCourts < ActiveRecord::Migration[5.2]
       t.integer :player_id
       t.integer :court_id
       t.boolean :is_active
-      t.boolean :is_favorite
+      t.boolean :is_favorite, default: false
 
       t.timestamps
     end
