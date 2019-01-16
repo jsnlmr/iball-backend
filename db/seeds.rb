@@ -470,7 +470,7 @@ Court.create(
 )
 
 Court.create(
-  name: '-77.03302',
+  name: 'Volta Park Recreation Center',
   address: '1555 34th Street, NW, Washington DC',
   lat: 38.909976,
   lng: -77.067783
