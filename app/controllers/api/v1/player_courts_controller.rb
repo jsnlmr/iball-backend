@@ -8,18 +8,8 @@ class Api::V1::PlayerCourtsController < ApplicationController
       player_id: location_params[:player_id],
       court_id: location_params[:court_id]
     )
-    @location.update(is_active: true)
+    @location.update(location_params)
   end
-
-  # def update
-  #   #byebug
-  #   @location = PlayerCourt.find_or_create_by(
-  #     player_id: location_params[:player_id],
-  #     court_id: location_params[:court_id]
-  #   )
-  #
-  #   @location.update(is_active: true)
-  # end
 
   private
 
