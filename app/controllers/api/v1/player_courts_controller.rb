@@ -1,13 +1,18 @@
 class Api::V1::PlayerCourtsController < ApplicationController
-  before_action :set_active
+  # before_action :set_active
 
   def create
-    #byebug
+    # byebug
     # PlayerCourt.create(location_params)
     @location = PlayerCourt.find_or_create_by(
       player_id: location_params[:player_id],
       court_id: location_params[:court_id]
     )
+
+    if(location_params[:is_active])
+      set_active()
+    end
+
     @location.update(location_params)
   end
 
