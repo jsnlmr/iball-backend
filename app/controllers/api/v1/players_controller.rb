@@ -4,8 +4,19 @@ class Api::V1::PlayersController < ApplicationController
     render json: @players, methods: [:favorites]
   end
 
+  def create
+    @player = Player.create(player_params)
+    render json: @player, methods: [:favorites]
+  end
+
   def show
     @player = Player.find(params[:id])
     render json: @player, methods: [:favorites]
+  end
+
+  private
+
+  def player_params
+    params.require(:player).permit(:username)
   end
 end
