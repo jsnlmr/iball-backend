@@ -14,6 +14,17 @@ class Api::V1::PlayersController < ApplicationController
     render json: @player, methods: [:favorites]
   end
 
+  def update
+    @player = Player.find(params[:id])
+    @player.update(player_params)
+    render json: @player, methods: [:favorites]
+  end
+
+  def destroy
+    @player = Player.find(params[:id])
+    @player.destroy
+  end
+
   private
 
   def player_params
