@@ -1,23 +1,30 @@
 class Api::V1::PlayersController < ApplicationController
+
+  def profile
+    token = request.headers['Authentication'].split(' ')[1]
+    @player = Player.find(decode(token)['player_id'])
+    render json: @player
+  end
+
   def index
     @players = Player.all
-    render json: @players, methods: [:favorites]
+    render json: @players
   end
 
   def create
     @player = Player.create(player_params)
-    render json: @player, methods: [:favorites]
+    render json: @player
   end
 
   def show
     @player = Player.find(params[:id])
-    render json: @player, methods: [:favorites]
+    render json: @player
   end
 
   def update
     @player = Player.find(params[:id])
     @player.update(player_params)
-    render json: @player, methods: [:favorites]
+    render json: @player
   end
 
   def destroy

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :players, only: [:index, :show, :create, :update, :destroy]
       resources :courts, only: [:index, :show]
       resources :player_courts, only: [:create]
+      post '/login', to: 'auth#create'
+      get '/profile', to: 'players#profile'
     end
   end
 end
