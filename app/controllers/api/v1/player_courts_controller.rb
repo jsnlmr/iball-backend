@@ -14,6 +14,8 @@ class Api::V1::PlayerCourtsController < ApplicationController
     end
 
     @location.update(location_params)
+
+    render json: @location
   end
 
   private

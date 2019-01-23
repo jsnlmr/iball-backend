@@ -318,7 +318,7 @@ Court.create(
 Court.create(
   name: 'Marvin Gaye Recreation Center',
   address: '6201 Banks Place, NE, Washington DC',
-  lat: 38.91706,
+  lat: 38.891968,
   lng: -77.00025
 )
 

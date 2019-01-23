@@ -12,7 +12,7 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.create(player_params)
+    @player = Player.create(username: params[:username], password: params[:password])
     render json: @player
   end
 
@@ -23,7 +23,7 @@ class Api::V1::PlayersController < ApplicationController
 
   def update
     @player = Player.find(params[:id])
-    @player.update(player_params)
+    @player.update(username: params[:username], password: params[:password])
     render json: @player
   end
 
@@ -35,6 +35,6 @@ class Api::V1::PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:username)
+    params.require(:player).permit(:username, :password)
   end
 end
